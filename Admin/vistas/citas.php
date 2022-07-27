@@ -3,14 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Maycar/Clientes</title>
+<title>Maycar/Carrito</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="vistas\plugins\tempusdominus-bootstrap-4\css\tempusdominus-bootstrap-4.min.css"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$("#datepicker").datetimepicker({
+	useCurrent: false,
+	format: "DD-MMM-YYYY",
+	showTodayButton: true,
+	icons: {
+	next: "fa fa-chevron-right",
+	previous: "fa fa-chevron-left",
+	today: 'todayText',
+	}
+	});
+	$("#timepicker").datetimepicker({
+	format: "LT",
+	icons: {
+	up: "fa fa-chevron-up",
+	down: "fa fa-chevron-down"
+	}
+});
+</script>
 <style>
 body {
 	color: #566787;
@@ -241,6 +271,9 @@ table.table .avatar {
 $(document).ready(function(){
 	// Activate tooltip
 	$('[data-toggle="tooltip"]').tooltip();
+    $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
 	
 	// Select/Deselect checkboxes
 	var checkbox = $('table tbody input[type="checkbox"]');
@@ -270,10 +303,10 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Clientes</b></h2>
+						<h2>Citas</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Añadir Cliente</span></a>
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Añadir Cita</span></a>
 						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>						
 					</div>
 				</div>
@@ -287,17 +320,10 @@ $(document).ready(function(){
 								<label for="selectAll"></label>
 							</span>
 						</th>
-						<th>ID</th>
-						<th>Nombre</th>
-						<th>Apellido</th>
-						<th>E-Mail</th>
-						<th>Telefono</th>
-						<th>Dirección</th>
-						<th>Codigo Postal</th>
-						<th>Tarjeta</th>
-						<th>Contraseña</th>
+						<th>ID Cita</th>
+						<th>ID Cliente</th>
+                        <th>Fecha</th>
 						<th>Opciones</th>
-						<?php //<th>Comentario</th>?>
 					</tr>
 				</thead>
 				<tbody>
@@ -309,20 +335,14 @@ $(document).ready(function(){
 							</span>
 						</td>
 						<td>1</td>
-						<td>Humberto</td>
-						<td>Diaz</td>
-						<td>humbertodiaz@gmail.com</td>
-                        <td>449 862 4585</td>
-                        <td>Real de Haciendas, Hacienda Chapingo #113</td>
-						<td>20195</td>
-						<td>Mastercard 5678</td>
-						<td>**********</td>
+						<td>1</td>
+                        <th>24/07/2022 16:00</th>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
 						</td>
 					</tr>
-					<tr>
+                    <tr>
 						<td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
@@ -330,28 +350,82 @@ $(document).ready(function(){
 							</span>
 						</td>
 						<td>2</td>
-						<td>Sofía</td>
-						<td>Ramirez</td>
-						<td>diazsof@gmail.com</td>
-                        <td>449 456 6632</td>
-                        <td>Jardines del Sol, Sistema Solar #205</td>
-						<td>20175</td>
-						<td>Mastercard 7522</td>
-						<td>**********</td>
+						<td>1</td>
+                        <th>24/07/2022 13:00</th>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
 						</td>
-					</tr>			
+					</tr>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+						<td>3</td>
+						<td>2</td>
+                        <th>25/07/2022 10:00</th>
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+						</td>
+					</tr>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+						<td>4</td>
+						<td>3</td>
+                        <th>25/07/2022 12:00</th>
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+						</td>
+					</tr>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+						<td>5</td>
+						<td>3</td>
+                        <th>26/07/2022 14:00</th>
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+						</td>
+					</tr>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+						<td>6</td>
+						<td>4</td>
+                        <th>29/07/2022 17:30</th>
+						<td>
+							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+						</td>
+					</tr>	
 				</tbody>
 			</table>
 			<div class="clearfix">
 				<div class="hint-text">Mostrando <b>5</b> de <b>25</b> entradas</div>
 				<ul class="pagination">
 					<li class="page-item disabled"><a href="#">Atrerior</a></li>
-					<li class="page-item"><a href="#" class="page-link">1</a></li>
+					<li class="page-item active"><a href="#" class="page-link">1</a></li>
 					<li class="page-item"><a href="#" class="page-link">2</a></li>
-					<li class="page-item active"><a href="#" class="page-link">3</a></li>
+					<li class="page-item"><a href="#" class="page-link">3</a></li>
 					<li class="page-item"><a href="#" class="page-link">4</a></li>
 					<li class="page-item"><a href="#" class="page-link">5</a></li>
 					<li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
@@ -366,52 +440,26 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<form>
 				<div class="modal-header">						
-					<h4 class="modal-title">Añadir Cliente</h4>
+					<h4 class="modal-title">Añadir Cita</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-                <div class="form-group">
-						<label>ID</label>
+					<div class="form-group">
+						<label>ID Cita</label>
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Nombre</label>
+						<label>ID Cliente</label>
 						<input type="text" class="form-control" required>
 					</div>
-					<div class="form-group">
-						<label>Apellido</label>
-						<input type="file" class="form-control" required>
+            			<div class="form-group">
+							<label>Fecha</label>
+          					<div class="input-group date" id="datepicker">
+            					<input class="form-control" placeholder="MM/DD/YYYY 00:00"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
+    						</div>
+						</div>
 					</div>
-					<div class="form-group">
-						<label>E-Mail</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Telefono</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Dirección</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Codigo Postal</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Tarjeta</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Contraseña</label>
-						<input type="password" class="form-control" required>
-					</div>					
 				</div>			
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-success" value="Añadir">
-				</div>
 			</form>
 		</div>
 	</div>
@@ -422,51 +470,26 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<form>
 				<div class="modal-header">						
-					<h4 class="modal-title">Editar Cliente</h4>
+					<h4 class="modal-title">Editar Cita</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-				<div class="form-group">
-						<label>ID</label>
+					<div class="form-group">
+						<label>ID Cita</label>
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Nombre</label>
+						<label>ID Cliente</label>
 						<input type="text" class="form-control" required>
 					</div>
-					<div class="form-group">
-						<label>Apellido</label>
-						<input type="file" class="form-control" required>
+           				<div class="form-group">
+							<label>Fecha</label>
+        					<div class="input-group date" id="datepicker">
+           						<input class="form-control" placeholder="MM/DD/YYYY 00:00"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
+        					</div>
+						</div>
 					</div>
-					<div class="form-group">
-						<label>E-Mail</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Telefono</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Dirección</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Codigo Postal</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Tarjeta</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Contraseña</label>
-						<input type="password" class="form-control" required>
-					</div>					
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-info" value="Guardar">
-				</div>
+				</div>			
 			</form>
 		</div>
 	</div>
@@ -477,11 +500,11 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<form>
 				<div class="modal-header">						
-					<h4 class="modal-title">Eliminar Cliente</h4>
+					<h4 class="modal-title">Eliminar Cita</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<p>Estas seguro de eliminar este cliente?</p>
+					<p>Estas seguro de eliminar esta cita?</p>
 					<p class="text-warning"><small>Esta acción no se puede deshacer</small></p>
 				</div>
 				<div class="modal-footer">

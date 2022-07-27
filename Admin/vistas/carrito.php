@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Maycar/Productos</title>
+<title>Maycar/Carrito</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -464,11 +464,9 @@ $(document).ready(function(){
 						<textarea class="form-control" required></textarea>
 					</div>
             			<div class="form-group">
-							<label>Date</label>
-          						<div class="input-group date" id="datepicker">
-            						<input class="form-control" placeholder="MM/DD/YYYY"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
-        		  					</div>
-        						</div>
+							<label>Fecha</label>
+          					<div class="input-group date" id="datepicker">
+            					<input class="form-control" placeholder="MM/DD/YYYY"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
     						</div>
 						</div>
 					</div>
@@ -487,7 +485,7 @@ $(document).ready(function(){
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-				<div class="form-group">
+					<div class="form-group">
 						<label>ID Carrito</label>
 						<input type="text" class="form-control" required>
 					</div>
@@ -496,14 +494,17 @@ $(document).ready(function(){
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Cliente</label>
+						<label>Total</label>
 						<textarea class="form-control" required></textarea>
-					</div>						
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-info" value="Guardar">
-				</div>
+					</div>
+           				<div class="form-group">
+							<label>Fecha</label>
+        					<div class="input-group date" id="datepicker">
+           						<input class="form-control" placeholder="MM/DD/YYYY"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
+        					</div>
+						</div>
+					</div>
+				</div>			
 			</form>
 		</div>
 	</div>
@@ -518,7 +519,7 @@ $(document).ready(function(){
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<p>Estas seguro de eliminar este csrrito?</p>
+					<p>Estas seguro de eliminar este carrito?</p>
 					<p class="text-warning"><small>Esta acción no se puede deshacer</small></p>
 				</div>
 				<div class="modal-footer">

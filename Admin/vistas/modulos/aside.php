@@ -40,7 +40,7 @@
                 </li>
                 <li class="nav-item">
                     <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/carrito.php','content-wrapper')">
-                        <i class="fas fa-barcode"></i>
+                        <i class="ion ion-ios-cart"></i>
                         <p>Carritos</p>
                     </a>
                 </li>
@@ -48,6 +48,30 @@
                     <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/clientes.php','content-wrapper')">
                         <i class="fas fa-users"></i>
                         <p>Clientes</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/ordenes.php','content-wrapper')">
+                        <i class="fas fa-store-alt"></i>
+                        <p>Ordenes</p>
+                    </a>        
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/listadeseos.php','content-wrapper')">
+                        <i class="fas fa-heart"></i>
+                        <p>Lista de Deseos</p>
+                    </a>        
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/empleados.php','content-wrapper')">
+                        <i class="ion ion-person"></i>
+                        <p>Empleados</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/citas.php','content-wrapper')">
+                        <i class="ion ion-android-calendar"></i>
+                        <p>Citas</p>
                     </a>
                 </li>
                 <li class="nav-item">
