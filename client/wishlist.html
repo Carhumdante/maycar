@@ -43,57 +43,81 @@
         <div class="loader"></div>
     </div>
 
+   <!-- Offcanvas Menu Begin -->
+   <div class="offcanvas-menu-overlay"></div>
+   <div class="offcanvas-menu-wrapper">
+       <div class="offcanvas__close">+</div>
+       <ul class="offcanvas__widget">
+           <li><span class="icon_search search-switch"></span></li>
+           <li><a href="./wishlist.html"><span class="icon_heart_alt"></span>
+               <div class="tip">1</div>
+           </a></li>
+           <li><a href="./shop-cart.html"><span class="icon_bag_alt"></span>
+               <div class="tip">2</div>
+           </a></li>
+       </ul>
+       <div class="offcanvas__logo">
+           <a href="./index.html"><img src="img/logo.svg" alt=""></a>
+       </div>
+       <div id="mobile-menu-wrap"></div>
+       <div class="offcanvas__auth">
+           <a href="./signin-up.html">Iniciar Sesión</a>
+           <a href="./signin-up.html">Registrarse</a>
+       </div>
+   </div>
+   <!-- Offcanvas Menu End -->
+
    <!-- Header Section Begin -->
    <header class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-2 col-lg-2">
-                <div class="header__logo">
-                    <a href="./index.html"><img src="img/logo.svg" alt=""></a>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-7">
-                <nav class="header__menu">
-                    <ul>
-                        <li class="active"><a href="./index.html">Inicio</a></li>
-                        <li><a href="./shop.html">Maquillaje</a></li>
-                        <li><a href="./shop.html">Tratamientos</a></li>
-                        <li><a href="./shop.html">Tienda</a></li>
-                        <li><a href="#">Paginas</a>
-                            <ul class="dropdown">
-                                <li><a href="./product-details.html">Detalles del producto</a></li>
-                                <li><a href="./shop-cart.html">Carrito de compra</a></li>
-                                <li><a href="./checkout.html">Verificar compra</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./contact.html">Citas</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-3">
-                <div class="header__right">
-                    <div class="header__right__auth">
-                        <a href="./signin-up.html">Iniciar Sesión</a>
-                        <a href="./signin-up.html">Registrarse</a>
-                    </div>
-                    <ul class="header__right__widget">
-                        <li></a><span class="icon_search search-switch"></span></li>
-                        <li><a href="./wishlist.html"><span class="icon_heart_alt"></span>
-                            <div class="tip">2</div>
-                        </a></li>
-                        <li><a href="./shop-cart.html"><span class="icon_bag_alt"></span>
-                            <div class="tip">2</div>
-                        </a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="canvas__open">
-            <i class="fa fa-bars"></i>
-        </div>
-    </div>
-</header>
-<!-- Header Section End -->
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-xl-2 col-lg-2">
+                   <div class="header__logo">
+                       <a href="./index.html"><img src="img/logo.svg" alt=""></a>
+                   </div>
+               </div>
+               <div class="col-xl-7 col-lg-7">
+                   <nav class="header__menu">
+                       <ul>
+                           <li class="active"><a href="./index.html">Inicio</a></li>
+                           <li><a href="./shop.html">Maquillaje</a></li>
+                           <li><a href="./shop.html">Tratamientos</a></li>
+                           <li><a href="./shop.html">Tienda</a></li>
+                           <li><a href="#">Paginas</a>
+                               <ul class="dropdown">
+                                   <li><a href="./product-details.html">Detalles del producto</a></li>
+                                   <li><a href="./shop-cart.html">Carrito de compra</a></li>
+                                   <li><a href="./checkout.html">Verificar compra</a></li>
+                               </ul>
+                           </li>
+                           <li><a href="./contact.html">Citas</a></li>
+                       </ul>
+                   </nav>
+               </div>
+               <div class="col-lg-3">
+                   <div class="header__right">
+                       <div class="header__right__auth">
+                           <a href="./signin-up.html">Iniciar Sesión</a>
+                           <a href="./signin-up.html">Registrarse</a>
+                       </div>
+                       <ul class="header__right__widget">
+                           <li></a><span class="icon_search search-switch"></span></li>
+                           <li><a href="./wishlist.html"><span class="icon_heart_alt"></span>
+                               <div class="tip">2</div>
+                           </a></li>
+                           <li><a href="./shop-cart.html"><span class="icon_bag_alt"></span>
+                               <div class="tip">2</div>
+                           </a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           <div class="canvas__open">
+               <i class="fa fa-bars"></i>
+           </div>
+       </div>
+   </header>
+   <!-- Header Section End -->
 
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
@@ -102,7 +126,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Inicio</a>
-                        <span>Carrito de Compras</span>
+                        <span>Lista de Deseos</span>
                     </div>
                 </div>
             </div>
@@ -120,9 +144,6 @@
                             <thead>
                                 <tr>
                                     <th>Producto</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th>Total</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -141,14 +162,6 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 100.50</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="2">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 201.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
@@ -164,14 +177,6 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 170.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 170.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
@@ -187,14 +192,6 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 210.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="3">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 630.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
@@ -210,14 +207,6 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 140.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="2">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 280.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -230,32 +219,9 @@
                         <a href="#">Continuar comprando</a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="cart__btn update__btn">
-                        <a href="#"><span class="icon_loading"></span> Actualizar Carrito</a>
-                    </div>
-                </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="discount__content">
-                        <h6>Codigos de Descuento</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Ingresa el codigo de Descuento">
-                            <button type="submit" class="site-btn">Appplicar</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-2">
-                    <div class="cart__total__procced">
-                        <h6>Total en el Carrito</h6>
-                        <ul>
-                            <li>Subtotal <span>$ 1281.0</span></li>
-                            <li>Total <span>$ 1281.0</span></li>
-                        </ul>
-                        <a href="#" class="primary-btn">Proceder a verificar compra</a>
-                    </div>
-                </div>
+    
             </div>
         </div>
     </section>
