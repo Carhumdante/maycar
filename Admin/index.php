@@ -1,6 +1,6 @@
 <?php
 
-require_once "controladores/plantilla.controlador.php";
+require_once "controladores/lookscreen.controlador.php";
 
-$plantilla = new PlantillaControlador();
-$plantilla -> CargarPlantilla();
+$plantilla = new LookscreenControlador();
+$plantilla -> CargarLookscreen();
