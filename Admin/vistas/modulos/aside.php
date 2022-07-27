@@ -12,14 +12,7 @@
 
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item">
-                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/dashboard.php','content-wrapper')">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Tablero Principal
-                        </p>
-                    </a>
-                </li>
+               
                 <li class="nav-item">
                     <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/productos.php','content-wrapper')">
                         <i class="fas fa-barcode"></i>

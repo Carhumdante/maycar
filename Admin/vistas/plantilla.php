@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
-            <?php include "vistas/dashboard.php" ?>
+            <?php include "vistas/productos.php" ?>
             
         </div>
         <!-- /.content-wrapper -->
